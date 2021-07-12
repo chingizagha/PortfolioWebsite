@@ -1,0 +1,615 @@
+{% extends 'app/base.html' %}
+{% block content %}
+
+
+    <div id="block-1">
+        <div class="container">
+            <h1>Chingiz Agha</h1>
+            <p>Interactive resume</p>
+        </div>
+        <div class="overlay"></div>
+        <a href="#" class="icon-down-arrow-a">
+            <i class="fas fa-angle-down icon-down-arrow"></i>
+        </a>
+    </div>
+
+    <nav>
+        <div class="div">
+            <ul>
+                <li>
+                    <a href="#block-2">Profile</a>
+                </li>
+                <li>
+                    <a href="#block-3">Experiences</a>
+                </li>
+                <li>
+                    <a href="#block-4">Abilities</a>
+                </li>
+                <li>
+                    <a href="#block-5">Projects</a>
+                </li>
+                <li>
+                    <a href="#block-6">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="block-2" class="profile">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="header-h2 ">Profile</h2>
+                <p class="header-p">I'm a creative PHP webdeveloper</p>
+                <hr class="hr-bottom-border">
+            </div>
+            <div class="row d-flex">
+                <div class="profile-col col-4">
+                    <h3>About me</h3>
+                    <p class="text-col">I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.</p>
+                </div>
+                <div class="profile-col profile-col-img col-4">
+                    <figure>
+                        <img src="{{ url_for('static', filename='images/pascal_van_gemert.png')}}" alt="">
+                        
+                    </figure>
+                </div>
+                <div class="profile-col col-4 mar-left-10">
+                    <h3>Details</h3>
+                    <p> <div class="font-bold mar-bottom-5">Name:</div>
+                        <div class="mar-bottom-10">Chingiz</div>
+                        <div class="font-bold mar-bottom-5">Age:</div>
+                        <div class="mar-bottom-10">19 years</div>
+                        <div class="font-bold mar-bottom-5">Location:</div>
+                        <div class="mar-bottom-10">Sumgait, Azerbaijan</div>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+
+                <p class="profile-col-bottom">Got inspired? Copied the theme? Or do you just like the website? No problem, just buy me a beer and make me happy!</p>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="block-3">
+
+        <div class="container">
+
+            <h2 class="header-h2 ">Experiences</h2>
+            <p class="header-p">“Protons give an atom its identity, electrons its personality.”
+                - Bill Bryson, A short history of nearly everything</p>
+            
+            <hr class="hr-bottom-border">
+
+            <div class="row education-sec">
+
+                <h3 class="mar-bottom-20">Educations</h3>
+
+                <div class="education-box">
+
+                    <div class="education-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Penn University</h4>
+                            <p class="font-size-15">Mar 2014 - May 2014</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Course - Gamification (course)
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Gamification is the application of game elements and digital game design techniques to non-game problems, such as business and social impact challenges. This course thought me about the mechanisms of gamification, why it has such tremendous potential, and how to use it effectively.
+                                </p>
+    
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Online
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="education-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Avans Highschool</h4>
+                            <p class="font-size-15">Aug 2004 - Jun 2008</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Bachelor - Computer Science (Specialization: Multimedia)
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    The education was mainly Java-based programming, but I also learned about SQL, PHP, MVC, UML and more. During my time in college, I specialized in multimedia. Here I learned about gaming -the importance of OOP-, web- and user experience and design.
+                                </p>
+    
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    's-Hertogenbosch
+                                </span>
+                            </p>
+    
+                        </div>
+                        
+                    </div>
+
+                    <div class="education-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Rodenborch</h4>
+                            <p class="font-size-15">Aug 1999 - Jun 2004
+
+                            </p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Highschool - Havo (Nature/Technics & Nature/Health)
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    I graduated highschool, where I enjoyed doing science, math, biology and arts. I realized in my third year of school that I wanted to do something with websites, and so I started making small flash/actionscript applications.
+                                </p>
+    
+                                <span class="location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Rosmalen
+                                </span>
+                            </p>
+    
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <hr class="hr-bottom-border">
+            </div>
+
+            <div class="row careers-sec">
+
+                <h3 class="mar-bottom-20">Careers</h3>
+
+                <div class="careers-box">
+                    
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Startselect | Online Prepaid Services</h4>
+                            <p class="font-size-15">May 2016 - current</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Working as a Senior Devloper on a large european based webshop for digital games and gifrcards. The application is Laravel based and as a team we are working in a fully scrum way. .   
+                                </p>
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Eindhoven 
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://startselect.com</a> 
+                                    </span>
+                                </span>
+                                
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>The Secret Lab</h4>
+                            <p class="font-size-15">May 2016 - current</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Working as a Senior Devloper on a large european based webshop for digital games and gifrcards. The application is Laravel based and as a team we are working in a fully scrum way. .   
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Eindhoven 
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://startselect.com</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Startselect | Online Prepaid Services</h4>
+                            <p class="font-size-15">May 2016 - current</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Working as a Senior Devloper on a large european based webshop for digital games and gifrcards. The application is Laravel based and as a team we are working in a fully scrum way. .   
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Eindhoven 
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://startselect.com</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Startselect | Online Prepaid Services</h4>
+                            <p class="font-size-15">May 2016 - current</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Working as a Senior Devloper on a large european based webshop for digital games and gifrcards. The application is Laravel based and as a team we are working in a fully scrum way. .   
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Eindhoven 
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://startselect.com</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Startselect | Online Prepaid Services</h4>
+                            <p class="font-size-15">Aug 2015 - Apr 2016</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    As a senior at The Secret Lab I work on projects like Kaartjes.nl, Clay.com and more. Using frameworks and technologies such as Laravel, Wordpress, Drupal 8 and ElasticSearch. I also introduced working with Git Flow and supporting my colleagues to write nice readable and reusable code.  
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Amsterdam  
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://thesecretlab.nl</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Caviar Digital</h4>
+                            <p class="font-size-15">Feb 2015 - Jul 2015</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Creative Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Caviar Digital is a digital agency based in Amsterdam. I worked here as a creative developer on a big project for the new Samsung Galaxy S6 / S6 edge and created a configurable CMS based on the Laravel Framework. Due to economically reasons it was a short but good experience.  
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Amsterdam  
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://digital.caviarcontent.com/</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Whoopaa / HRMatches</h4>
+                            <p class="font-size-15">Apr 2011 - Jan 2015</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Lead Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Whoopaa is a startup that began as a social network where users were able to separate their business- and personal social life. As this idea didn't exactly take off the way we expected it to, we changed the idea. We began a job matching platform, where Whoopaa became the place for job seekers to make an interactive CV enriched with certified tests. The place where companies can create job openings and efficiently find the right candidates needed a name as well, and was called HRMatches. I developed an own framework, which I improved in user experience and speed after the big idea change. I also developed the real time match algorithm as well as a lot of other helpful algorithms. 
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        's-Hertogenbosch
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://www.whoopaa.com/</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Startselect | Online Prepaid Services</h4>
+                            <p class="font-size-15">May 2016 - current</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Working as a Senior Devloper on a large european based webshop for digital games and gifrcards. The application is Laravel based and as a team we are working in a fully scrum way. .   
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Eindhoven 
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://startselect.com</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="careers-box-mini d-flex">
+
+                        <div class="col-4">
+                            <h4>Startselect | Online Prepaid Services</h4>
+                            <p class="font-size-15">May 2016 - current</p>
+                        </div>
+
+                        <div class="col-8">
+                            <p>
+                                <p class="font-bold mar-bottom-10">
+                                    Fulltime - Senior Web Developer
+                                </p>
+    
+                                <p class="mar-bottom-10 font-size-15">
+                                    Working as a Senior Devloper on a large european based webshop for digital games and gifrcards. The application is Laravel based and as a team we are working in a fully scrum way. .   
+                                </p>
+    
+                                <span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Eindhoven 
+                                    </span>
+                                    <span>|</span>
+                                    <span>
+                                        <i class="fas fa-link"></i> <a href="">http://startselect.com</a> 
+                                    </span>
+                                </span>
+                            </p>
+    
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="block-4">
+        <div class="container">
+
+            <h2 class="header-h2 ">Abilities</h2>
+            <p class="header-p">“Life without knowledge is death in disguise.” <br>
+                - Talib Kweli</p>
+
+            
+
+            <hr class="hr-bottom-border">
+
+            <div class="row">
+
+                <div class="row">
+                    <h3>Languages</h3>
+                </div>
+                <div class="row d-flex">
+
+                    <div class="col-6 pad-r-l-15 pad-l-0">
+                        <ul>
+                            <li class="d-flex">
+                                <span class="ability-name">
+                                    Dutch (Mother tongue)
+                                </span>
+                                <span class="ability-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </li>
+                        </ul>
+    
+                        <ul>
+                            <li class="d-flex">
+                                <span class="ability-name">
+                                    English (Daily use)
+                                </span>
+                                <span class="ability-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 pad-r-l-15">
+                        <ul>
+                            <li class="d-flex">
+                                <span class="ability-name">
+                                    German (Survivable)
+                                </span>
+                                <span class="ability-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                            </li>
+                        </ul>
+    
+                        <ul>
+                            <li class="d-flex">
+                                <span class="ability-name">
+                                    French (Un petit peu)
+                                </span>
+                                <span class="ability-star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>                            
+                                </span>
+                            </li>
+                        </ul>   
+                    </div>
+                   
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="block-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="header-h2 ">Projects</h2>
+                <p class="header-p">“You can do anything you set your mind to.” <br>
+                    - Benjamin Franklin</p>
+            </div>
+
+            <hr class="hr-bottom-border">
+            <div class="row d-flex">
+
+                <div class="col-6">
+                    <figure class="fig-pro-img">
+                        <img src="{{ url_for('static', filename='images/project_mals.jpg')}}" alt="">
+                        
+                    </figure>
+                </div>
+                <div class="col-6 mar-left-10 ">
+                    <h2>Technology used:</h2>
+                    <p>Html, Css, Js, Python, Flask</p>
+
+                    <ul>
+                        <li>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, dolore!
+                        </li>
+                        <li>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, dolore!
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
