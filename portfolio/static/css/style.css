@@ -223,6 +223,7 @@ nav a {
 .fig-pro-img {
     height: 286px;
     width: 390px;
+    position: relative;
 }
 
 #block-5 .col-6 h2  {
@@ -246,20 +247,36 @@ nav a {
     margin-bottom: 15px;
 }
 
+#block-5 .icon {
+    background: #22A39F;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 48px;
+    height: 48px;
+}
+
+#block-5 .icon i {
+    color: #fff;
+    font-size: 20px;
+    line-height: 18px;
+    padding: 15px;
+}
+
 
 
 /* Contact Section */
 
-#block-6 {
+#block-7 {
     background-color: #434242;
 }
 
-#block-6 i {
+#block-7 i {
     font-size: 32px;
     margin-right: 20px;
 }
 
-#block-6 a {
+#block-7 a {
     color: #B4B3B3;
     transition: all 0.08s ease;
     margin-bottom: 20px;
@@ -268,13 +285,48 @@ nav a {
 
 
 
-#block-6 a:hover {
+#block-7 a:hover {
     color: #fff;
 }
 
 
-#block-6 ,row-2 p {
+#block-7 ,row-2 p {
     font-size: 15px;
 }
 
+#block-7 .col-12 {
+    margin-bottom: 1rem;
+}
 
+#block-7 input {
+    width: 85%;
+    outline: none;
+    color: #000;
+    border: 1px solid #ced4da;
+    border-radius: 0.3rem;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+}
+
+#block-7 label {
+    margin-bottom: 0.5rem;
+    font-family: "Mulish", sans-serif;
+    color: #fff ;
+    font-size: 18px;
+    display: inline-block;
+}
+
+#block-7 textarea {
+    width: 85%;
+    outline: none;
+    color: #495057;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.3rem;
+    font-size: 18px;
+}
+
+#block-7 button {
+    margin-left: 279px;
+}

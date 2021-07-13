@@ -43,6 +43,10 @@ img {
     height: 100%;
 }
 
+textarea {
+    resize: vertical;
+}
+
 .text-center {
     text-align: center;
 }
@@ -75,6 +79,10 @@ img {
 
 .mar-left-10 {
     margin-left: 10px;
+}
+
+.mar-top-20{
+    margin-top: 20px;
 }
 /********************/
 
@@ -138,4 +146,26 @@ img {
     margin: 40px 0;
     opacity: 0.2;
     border-color: #727878;
+}
+
+/* Button Section  */
+
+.btn-contact{
+    padding: 8px 16px;
+    background-color: transparent;
+    color: #fff;
+    border-color: #22A39F;
+    border: 1px solid #22A39F;
+    font-family: "Oswald", sans-serif;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 0.1rem; 
+    font-size: 14px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-contact:hover{
+    background-color: #22A39F;
+    border-color: #434242;
 }
