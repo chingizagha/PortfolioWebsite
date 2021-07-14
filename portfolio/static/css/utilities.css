@@ -55,6 +55,10 @@ textarea {
     display: flex;
 }
 
+.d-inlineB{
+    display: inline-block;
+}
+
 .font-bold {
     font-weight: 600;
 }
@@ -95,6 +99,10 @@ textarea {
 
 .pad-l-0 {
     padding-left: 0;
+}
+
+.pad-t-20 {
+    padding-top: 20px !important;
 }
 
 
@@ -168,4 +176,10 @@ textarea {
 .btn-contact:hover{
     background-color: #22A39F;
     border-color: #434242;
+}
+
+/* Color Section  */
+
+.fff {
+    color: #fff !important;
 }
