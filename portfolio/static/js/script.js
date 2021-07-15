@@ -5,30 +5,78 @@ window.addEventListener("scroll", function(){
 
 
 
-// const currentLocation = location.href;
-// const menuItem = document.querySelectorAll('.menuItem');
-// const menuLength = menuItem.length;
-// for(let i=0; i<menuLength; i++){
-//     if(menuItem[i].href === currentLocation){
-//         menuItem[i].className = "active";
-//     }
+// $(document).ready(function () {
+//     $(document).on("scroll", onScroll);
+    
+//     //smoothscroll
+//     $('a[href^="#"]').on('click', function (e) {
+//         e.preventDefault();
+//         $(document).off("scroll");
+        
+//         $('.menuItem').each(function () {
+//             $(this).removeClass('active');
+//         })
+//         $(this).addClass('active');
+      
+//         var target = this.hash,
+//             nav = target;
+//         $target = $(target);
+//         $('html, body').stop().animate({
+//             'scrollTop': $target.offset().top+2
+//         }, 500, 'swing', function () {
+//             window.location.hash = target;
+//             $(document).on("scroll", onScroll);
+//         });
+//     });
+// });
+
+// function onScroll(event){
+//     var scrollPos = $(document).scrollTop();
+//     $('.menuItem').each(function () {
+//         var currLink = $(this);
+//         var refElement = $(currLink.attr("href"));
+//         if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+//             $('.menuItem').removeClass("active");
+//             currLink.addClass("active");
+//         }
+//         else{
+//             currLink.removeClass("active");
+//         }
+//     });
 // }
 
-const animationItems = document.querySelectorAll('.menuItem');
-const sectionItems = document.querySelectorAll('.navItem');
-const animationOnScroll = () => {
-    if (animationItems.length > 0) {
-        for (let i = 0; i < animationItems.length; i++) {
-            const animationStart = 4;
-            let windowsHeight = window.scrollY;
-            let sectionHeight = sectionItems[i].scrollY;
-            if  (windowsHeight>sectionHeight){
-                animationItems[i].classList.add('active');
+/* Code for changing active 
+            link on clicking */
+            var btns = 
+                $(".menuItem");
+  
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click",
+                                      function () {
+                    var current = document
+                        .getElementsByClassName("active");
+  
+                    current[0].className = current[0]
+                        .className.replace("active", "");
+  
+                    this.className += "active";
+                });
             }
-            }
-        }
-    }
-
-window.addEventListener('scroll', animationOnScroll);
-// Sehife acilanda il section animasiyanin aktivlesmesi
-animationOnScroll();
+  
+            /* Code for changing active 
+            link on Scrolling */
+            $(window).scroll(function () {
+                var distance = $(window).scrollTop();
+                $('.navItem').each(function (i) {
+  
+                    if ($(this).position().top 
+                        <= distance + 250) {
+                          
+                            $('nav a.active')
+                                .removeClass('active');
+  
+                            $('nav a').eq(i)
+                                .addClass('active');
+                    }
+                });
+            }).scroll();

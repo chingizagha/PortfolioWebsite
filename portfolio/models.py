@@ -28,6 +28,12 @@ class Career(db.Model):
      place = db.Column(db.String(40), nullable=False)
      site = db.Column(db.String(50), nullable=True)
 
+class Contact(db.Model):
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    message = db.Column(db.Text, nullable=False)
 
 
 

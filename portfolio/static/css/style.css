@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}   
+
 body {
     font-family: 'Open Sans', sans-serif;
     color: #434242;
@@ -122,6 +126,7 @@ nav ul li:hover a {
 
 .active {
     background-color: #22A39F;
+    color: #fff;
 }
 
 /* nav ul li:first-child {
@@ -516,3 +521,4 @@ nav a {
 #block-7 button {
     margin-left: 279px;
 }
+
