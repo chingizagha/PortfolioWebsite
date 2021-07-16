@@ -55,6 +55,14 @@ textarea {
     display: flex;
 }
 
+.jc-space-bet{
+    justify-content: space-between;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
 .d-inlineB{
     display: inline-block;
 }

@@ -1,14 +1,18 @@
 import re
+from typing import Protocol
 from flask.helpers import flash
 from portfolio import app, os, db
 from flask import render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
-from portfolio.models import Profile, Education, Career, Contact
+from portfolio.models import Profile, Project, Blog, Contact
 # from portfolio.forms import 
 
 @app.route('/')
 def index():
-    return render_template('app/index.html')
+    profile = Profile.query.all()
+    project = Project.query.all()
+    blog = Blog.query.all()   
+    return render_template('app/index.html', profile=profile, blog=blog, project=project)
 
 @app.route('/admin')
 def admin():
@@ -55,3 +59,104 @@ def profile_update(id):
         db.session.commit()
         return redirect(url_for('profile'))
     return render_template('admin/profile-update.html', profile=profile)
+
+
+# Project Section =========================
+
+@app.route('/admin/project')
+def project():
+    project = Project.query.all() 
+    return render_template('admin/project.html', project=project)
+
+@app.route('/admin/project-add', methods=['GET', 'POST'])
+def project_add():
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        project = Project(
+            name = request.form['name'],
+            tag = request.form['tag'],
+            tech = request.form['tech'],
+            desc = request.form['desc'],
+            info = request.form['info'],
+            link = request.form['link'],
+            image = filename
+        )
+        db.session.add(project)
+        db.session.commit()
+        return redirect(url_for('project'))
+    return render_template('admin/project-add.html')
+
+@app.route('/admin/project-update/<int:id>', methods=['GET', 'POST'])
+def project_update(id):
+    project = Project.query.get_or_404(id)
+    if request.method == "POST":
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        project.name = request.form['name']
+        project.tag = request.form['tag']
+        project.tech = request.form['tech']
+        project.desc = request.form['desc']
+        project.info = request.form['info']
+        project.link = request.form['link']
+        project.image = filename
+        db.session.commit()
+        return redirect(url_for('project'))
+    return render_template('admin/project-update.html', project=project)
+
+
+@app.route('/admin/project-delete/<int:id>', methods=['GET', 'POST'])
+def project_delete(id):
+    project = Project.query.get_or_404(id)
+    db.session.delete(project)
+    db.session.commit()
+    return redirect(url_for('project'))
+
+# Blog Section =========================
+
+@app.route('/admin/blog')
+def blog():
+    blog = Blog.query.all() 
+    return render_template('admin/blog.html', blog=blog)
+
+@app.route('/admin/blog-add', methods=['GET', 'POST'])
+def blog_add():
+    if request.method == 'POST':
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        blog = Blog(
+            name = request.form['name'],
+            desc = request.form['desc'],
+            link = request.form['link'],
+            image = filename
+        )
+        db.session.add(blog)
+        db.session.commit()
+        return redirect(url_for('blog'))
+    return render_template('admin/blog-add.html')
+
+@app.route('/admin/blog-update/<int:id>', methods=['GET', 'POST'])
+def blog_update(id):
+    blog = Blog.query.get_or_404(id)
+    if request.method == "POST":
+        file = request.files['file']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        blog.name = request.form['name']
+        blog.desc = request.form['desc']
+        blog.link = request.form['link']
+        blog.image = filename
+        db.session.commit()
+        return redirect(url_for('blog'))
+    return render_template('admin/blog-update.html', blog=blog)
+
+
+@app.route('/admin/blog-delete/<int:id>', methods=['GET', 'POST'])
+def blog_delete(id):
+    blog = Blog.query.get_or_404(id)
+    db.session.delete(blog)
+    db.session.commit()
+    return redirect(url_for('blog'))

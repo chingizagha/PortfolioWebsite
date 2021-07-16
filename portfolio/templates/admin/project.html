@@ -1,0 +1,41 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row ">
+      <div class="col">
+        <table class="table table-success" >
+          <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Tag</th>
+                <th scope="col">Technology</th>
+                <th scope="col">Description</th>
+                <th scope="col">Information</th>
+                <th scope="col">link</th>
+                <th scope="col">Image</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+               {% for project in project %}
+              <tr>
+                <th scope="row">{{project.id}}</th>
+                <td>{{project.name}}</td>
+                <td>{{project.tag}}</td>
+                <td>{{project.tech}}</td>
+                <td>{{project.desc}}</td>
+                <td>{{project.info}}</td>
+                <td>{{project.link}}</td>
+                <td>{{project.image}}</td>
+                <td><a href="{{url_for('project_update', id=project.id)}}"><i class="fas fa-edit"></i>Update</a></td>
+                <td><a href="{{url_for('project_delete', id=project.id)}}"  onclick="return confirm('Are You Sure To Delete ?')"><i class="fas fa-trash-alt"></i>Delete</a></td>               </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

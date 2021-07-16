@@ -46,26 +46,27 @@
                 <hr class="hr-bottom-border">
             </div>
             <div class="row d-flex">
+                {% for profile in profile %}
                 <div class="profile-col col-4">
                     <h3>About me</h3>
-                    <p class="text-col">I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.</p>
+                    <p class="text-col">{{profile.desc}}</p>
                 </div>
                 <div class="profile-col profile-col-img col-4">
                     <figure>
-                        <img src="{{ url_for('static', filename='images/pascal_van_gemert.png')}}" alt="">
-                        
+                        <img src="static/uploads/{{profile.image}}" alt="">
                     </figure>
                 </div>
                 <div class="profile-col col-4 mar-left-10">
                     <h3>Details</h3>
                     <p> <div class="font-bold mar-bottom-5">Name:</div>
-                        <div class="mar-bottom-10">Chingiz</div>
+                        <div class="mar-bottom-10">{{profile.name}}</div>
                         <div class="font-bold mar-bottom-5">Age:</div>
-                        <div class="mar-bottom-10">19 years</div>
+                        <div class="mar-bottom-10">{{profile.age}} years</div>
                         <div class="font-bold mar-bottom-5">Location:</div>
-                        <div class="mar-bottom-10">Sumgait, Azerbaijan</div>
+                        <div class="mar-bottom-10">{{profile.location}}</div>
                     </p>
                 </div>
+                {% endfor %}
             </div>
             <div class="row">
 
@@ -590,44 +591,42 @@
             </div>
 
             <hr class="hr-bottom-border">
+            {% for project in project %}
             <div class="row d-flex">
-
                 <div class="col-6">
+                    
                     <figure class="fig-pro-img">
-                        <img src="{{ url_for('static', filename='images/project_mals.jpg')}}" alt="">
+                        <img src="static/uploads/{{project.image}}" alt="">
                         <figcaption>
                             <h3 class="font-bold fff">
-                                Mals
+                                {{project.name}}
                             </h3>
                             <p class="fff"> 
-                                Mals, a creative agency located in Rotterdam.
+                                {{project.desc}}
                             </p>
                             <p class="fff pad-t-20">
                                 <strong>Tags:</strong>
                                 <br>
-                                Development, Wordpress, Boostrap
+                                {{project.tag}}
                             </p>
-                            <a href="" target="_blank"></a>
+                            <a href="{{project.link}}" target="_blank"></a>
                             <span class="icon">
                                 <i class="fas fa-external-link-alt"></i>
                             </span>
                         </figcaption>
                     </figure>
+                    
                 </div>
                 <div class="col-6 mar-left-10 ">
                     <h2>Technology used:</h2>
-                    <p>Html, Css, Js, Python, Flask</p>
+                    <p>{{project.tech}}</p>
 
                     <ul>
-                        <li>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, dolore!
-                        </li>
-                        <li>
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, dolore!
-                        </li>
+                        {{project.info}}
                     </ul>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -637,16 +636,28 @@
                 <h2 class="header-h2 ">Blogs</h2>
             </div>
             <hr class="hr-bottom-border">
-            <div class="row d-flex">
-                <div class="col-4">
-
+            <div class="row d-flex jc-space-bet flex-wrap">
+                {% for blog in blog %}
+                <div class="col-6">
+                    <figure class="fig-pro-img">
+                        
+                        <img src="static/uploads/{{blog.image}}" alt="">
+                        <figcaption>
+                            <h3 class="font-bold fff">
+                                {{blog.name}}
+                            </h3>
+                            <p class="fff"> 
+                                {{blog.desc}}
+                            </p>
+                            <a href="{{blog.link}}" target="_blank"></a>
+                            <span class="icon">
+                                <i class="fas fa-external-link-alt"></i>
+                            </span>
+                        </figcaption>
+                        
+                    </figure>
                 </div>
-                <div class="col-4">
-
-                </div>
-                <div class="col-4">
-
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
