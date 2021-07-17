@@ -5,14 +5,24 @@ from portfolio import app, os, db
 from flask import render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from portfolio.models import Profile, Project, Blog, Contact
-# from portfolio.forms import 
+from portfolio.forms import ContactForm
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def index():
     profile = Profile.query.all()
     project = Project.query.all()
-    blog = Blog.query.all()   
-    return render_template('app/index.html', profile=profile, blog=blog, project=project)
+    blog = Blog.query.all()
+    form = ContactForm()
+    if form.validate_on_submit():
+        contact = Contact(
+            name = form.name.data,
+            email = form.email.data,
+            message = form.message.data
+        )
+        db.session.add(contact)
+        db.session.commit()
+        return redirect(url_for('index'))
+    return render_template('app/index.html', profile=profile, blog=blog, project=project, form=form)
 
 @app.route('/admin')
 def admin():
@@ -160,3 +170,17 @@ def blog_delete(id):
     db.session.delete(blog)
     db.session.commit()
     return redirect(url_for('blog'))
+
+# Contact Section =========================
+
+@app.route('/admin/contact')
+def contact():
+    contact = Contact.query.all()
+    return render_template ('admin/contact.html', contact=contact)
+
+@app.route('/admin/contact-delete/<int:id>', methods=['GET', 'POST'])
+def contact_delete(id):
+    contact = Contact.query.get_or_404(id)
+    db.session.delete(contact)
+    db.session.commit()
+    return redirect(url_for('contact'))
